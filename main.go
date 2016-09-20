@@ -56,7 +56,7 @@ func login(ctx *iris.Context) {
 	if err := json.Unmarshal(body, &result); err != nil {
 		panic(err)
 	}
-	ctx.JSON(200, result)
+	ctx.JSON(resp.StatusCode, result)
 
 }
 
@@ -77,7 +77,7 @@ func pair(ctx *iris.Context) {
 	if err := json.Unmarshal(body, &result); err != nil {
 		panic(err)
 	}
-	ctx.JSON(200, result)
+	ctx.JSON(resp.StatusCode, result)
 }
 
 func leave(ctx *iris.Context) {
@@ -97,5 +97,5 @@ func leave(ctx *iris.Context) {
 	if err := json.Unmarshal(body, &result); err != nil {
 		panic(err)
 	}
-	ctx.JSON(200, result)
+	ctx.JSON(resp.StatusCode, result)
 }
