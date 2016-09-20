@@ -37,7 +37,6 @@ func login(ctx *iris.Context) {
 	log.Println(userID)
 	var result map[string]interface{}
 	loginAPI := getAPIURL(apiURL, "/users/login")
-	log.Println(loginAPI)
 	data := url.Values{}
 	data.Add("userId", userID)
 	data.Add("deviceId", deviceID)
@@ -85,7 +84,7 @@ func leave(ctx *iris.Context) {
 	chatID := ctx.PostValue("chatId")
 	sessionToken := ctx.PostValue("sessionToken")
 	var result map[string]interface{}
-	leaveAPI := getAPIURL(apiURL, "/users/pair")
+	leaveAPI := getAPIURL(apiURL, "/users/leave")
 	data := url.Values{}
 	data.Add("chatId", chatID)
 	data.Add("sessionToken", sessionToken)
